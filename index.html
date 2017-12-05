@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DropHash</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+    <style>
+        body {
+            background-color: #6dc0ff;
+        }
+        
+        .title {
+            text-align: center;
+        }
+        
+        .drag-drop {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .drag-drop input {
+            cursor: pointer;
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .info {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 50%;
+            margin: 5px;
+            text-align: left;
+        }
+        
+        .author {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 50%;
+            margin: 5px;
+            text-align: right;
+        }
+        
+        .author a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="app">
+        <main-title></main-title>
+
+        <drag-drop></drag-drop>
+
+        <qr></qr>
+        <hash></hash>
+        <!-- <link></link> -->
+
+        <info></info>
+        <author></author>
+
+        <info-model></info-model>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script>
+    <script>
+        Vue.component('main-title', {
+            template: '<div class="title"> <h1>Welcome</h1> <h3>to</h3> <h2>DropHash</h2> </div>'
+        });
+
+        Vue.component('drag-drop', {
+            template: '<div class="drag-drop"><i class="fa fa-paperclip fa-5x" aria-hidden="true"></i><input type="file" accept="image/png, application/pdf" /></div>'
+        });
+
+        Vue.component('qr', {
+            template: '<div></div>'
+        });
+        Vue.component('hash', {
+            template: '<div></div>'
+        });
+        // Vue.component('link', {
+        //     template: '<div></div>'
+        // });
+
+        Vue.component('info', {
+            template: '<div class="info" id="info"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></div>'
+        });
+        Vue.component('author', {
+            template: '<div class="author"><a href="https://meldm.github.io/" target="_blank">@meldm</a></div>'
+        });
+
+        Vue.component('info-model', {
+            template: '<div></div>'
+        });
+
+        new Vue({
+            el: '#app',
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
